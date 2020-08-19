@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+//javaEE 엔터프라이즈
+//언어 테이션
 @WebServlet("/a20_8_12/jspteset/CalcServlet")
 public class CalcServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
