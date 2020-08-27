@@ -16,7 +16,7 @@
 			<tr><td>암호</td><td><input type="password" name="mem_pwd"></td></tr>
 			<tr><td>암호확인</td><td><input type="password" name="mem_pwd_chk"></td></tr>
 			<tr><td>이름</td><td><input type="text" name="mem_name"></td></tr>
-			<tr><td>email</td><td><input type="text" name="mem_email"></td></tr>
+			<tr><td>email</td><td><input type="email" name="mem_email"></td></tr>
 			<tr><td>주소</td><td><input type="text" name="mem_addr"></td></tr>
 			<tr>
 				<td><input type="submit" value="수정"></td>

@@ -15,7 +15,7 @@
 			<tr>
 				<td colspan="2">
 					<!-- <input type="submit" value="로그인"> -->
-					<input type="submit" value="로그아웃">
+					<input type="submit" value="로그인">
 					<input type="button" value="회원정보변경" onclick="location.href='memberUpdate.jsp'">
 				</td>
 			</tr>

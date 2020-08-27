@@ -1,0 +1,5 @@
+package pro;
+
+public class BoardDBBean {
+	private static BoardDBBean instance=new BoardDBBean();
+}

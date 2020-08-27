@@ -22,7 +22,7 @@ public class MemberDBBean {
 		Context ctx=new InitialContext();//톰캣의 server.xml의 Context클래스를 가져오기
 		DataSource ds=(DataSource)ctx.lookup("java:comp/env/jdbc/myoracle");//context태그에서 jdbc.myoracle을 찾기
 		Connection con=ds.getConnection();
-		System.out.println("DB");
+//		System.out.println("DB");
 		return con;
 	}
 	
@@ -115,14 +115,15 @@ public class MemberDBBean {
 		Connection con=null;
 		PreparedStatement ps=null;
 		int re=-1;
-		String sql=" update memberT set mem_pwd=?,mem_email=?,mem_addr=? where mem_uid=? ";
+		String sql=" update memberT set mem_name=?,mem_pwd=?,mem_email=?,mem_addr=? where mem_uid=? ";
 		
 		con=getConnection();
 		ps=con.prepareStatement(sql);
-		ps.setString(1, member.getMem_pwd());
-		ps.setString(2, member.getMem_email());
-		ps.setString(3, member.getMem_addr());
-		ps.setString(4, member.getMem_uid());
+		ps.setString(1, member.getMem_name());
+		ps.setString(2, member.getMem_pwd());
+		ps.setString(3, member.getMem_email());
+		ps.setString(4, member.getMem_addr());
+		ps.setString(5, member.getMem_uid());
 		re=ps.executeUpdate();//insert,update,delete
 		
 		con.close();

@@ -1,0 +1,78 @@
+package pro;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.sql.DataSource;
+
+	public class BoardDBBean {
+	private static BoardDBBean instance=new BoardDBBean();//BoardDBBean
+	public static BoardDBBean getInstance(){
+		return instance;
+	}
+	
+	public Connection getConnection()throws Exception{
+		Context ctx=new InitialContext();//톰캣의 server.xml의 Context클래스를 가져오기
+		DataSource ds=(DataSource)ctx.lookup("java:comp/env/jdbc/myoracle");//context태그에서 jdbc.myoracle을 찾기
+		Connection con=ds.getConnection();
+//		System.out.println("DB");
+		return con;
+	}
+	
+	//글쓰기 write
+	public void insertBoard(BoardBean board){
+		Connection con=null;
+		PreparedStatement ps=null;
+		ResultSet rs=null;
+		int num=0;
+		
+		try{
+			con=getConnection();
+			ps=con.prepareStatement(" select max(b_id) from board ");
+			rs=ps.executeQuery();
+			if(rs.next()){
+				num=rs.getInt(1)+1;
+			}else{
+				num=1
+			}
+			
+			
+			
+			
+			
+			
+			ps=con.prepareStatement(" insert into board(b_id,b_name,b_email,b_title,b_content,b_pwd)values((select nvl(count(*),0)+1 from board),?,?,?,?,?) ");
+			ps.setString(1,board.getB_name());
+			ps.setString(2,board.getB_email());
+			ps.setString(3,board.getB_title());
+			ps.setString(4,board.getB_content());
+			ps.setString(5,board.getB_pwd());
+			ps.execute();
+			
+			con.close();
+			ps.close();
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+	}
+	
+	public void selectBoard(){
+		Connection con=null;
+		PreparedStatement ps=null;
+		ResultSet rs=null;
+		
+		try{
+			con=getConnection();
+			ps=con.prepareStatement(" select * from board ");
+			rs=ps.executeQuery();
+			while(rs.next()){
+				String b_id=rs.getString(1);
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+	}
+}

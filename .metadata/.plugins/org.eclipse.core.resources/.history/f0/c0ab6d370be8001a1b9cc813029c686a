@@ -1,0 +1,27 @@
+package pro;
+
+import java.sql.Connection;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.sql.DataSource;
+
+	public class BoardDBBean {
+	private static BoardDBBean instance=new BoardDBBean();//BoardDBBean
+	public static BoardDBBean getInstance(){
+		return instance;
+	}
+	
+	public Connection getConnection()throws Exception{
+		Context ctx=new InitialContext();//톰캣의 server.xml의 Context클래스를 가져오기
+		DataSource ds=(DataSource)ctx.lookup("java:comp/env/jdbc/myoracle");//context태그에서 jdbc.myoracle을 찾기
+		Connection con=ds.getConnection();
+//		System.out.println("DB");
+		return con;
+	}
+	
+	
+	public void insertBoard(BoardBean board){
+		
+	}
+}

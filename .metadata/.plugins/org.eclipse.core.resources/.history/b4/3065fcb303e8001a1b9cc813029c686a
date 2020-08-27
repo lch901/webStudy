@@ -1,0 +1,17 @@
+package pro;
+
+public class BoardBean {
+	private int b_id;
+	private String b_name;
+	private String b_email;
+	private String b_title;
+	private String b_content;
+	private String b_pwd;
+	private  b_date;
+	private int b_hit;
+	private int b_ip;
+	private int b_ref;
+	private int b_step;
+	private int b_level;
+	
+}
