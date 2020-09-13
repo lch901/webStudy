@@ -1,8 +1,0 @@
-package pro;
-
-public class BoardDBBean {
-	private static BoardDBBean instance=new BoardDBBean();
-	public static BoardDBBean getInstance(){
-		return instance;
-	}
-}

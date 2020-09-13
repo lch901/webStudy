@@ -1,0 +1,5 @@
+1599522876769	Move 6 resources to 'WebContent'
+1599522883976	Move 'sql' to 'WEB-INF'
+1599528380509	Rename resource 'findIdPw.jsp'
+1599528547786	Delete element
+1599528557708	Rename resource 'findId.jsp'
