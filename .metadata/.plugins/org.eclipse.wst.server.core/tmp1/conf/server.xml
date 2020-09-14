@@ -156,14 +156,10 @@
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
       <!-- <Context docBase="a20_8_24" path="/a20_8_24" reloadable="true" source="org.eclipse.jst.jee.server:a20_8_24"/></Host> -->
-      <Context docBase="C:\github\lch\project\webStudy\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\github\lch\project\webStudy\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\a20_8_24" path="/a20_8_24" reloadable="true" source="org.eclipse.jst.jee.server:a20_8_24">
-	      <Resource auth="Container" driverClassName="oracle.jdbc.OracleDriver" maxIdle="10" maxTotal="20" maxWaitMillis="-1" name="jdbc/myoracle" password="1234" type="javax.sql.DataSource" url="jdbc:oracle:thin:@127.0.0.1:1521:xe" username="system"/>
-      </Context>
       
-      <Context docBase="C:\github\lch\project\webStudy\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\beanPro" path="/beanPro" reloadable="true" source="org.eclipse.jst.jee.server:beanPro">
-      		<Resource auth="Container" driverClassName="oracle.jdbc.OracleDriver" maxIdle="10" maxTotal="20" maxWaitMillis="-1" name="jdbc/myoracle" password="1234" type="javax.sql.DataSource" url="jdbc:oracle:thin:@127.0.0.1:1521:xe" username="system"/>
-      </Context>
-      <Context docBase="C:\github\lch\project\webStudy\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\a20_9_8" path="/a20_9_8" reloadable="true" source="org.eclipse.jst.jee.server:a20_9_8"/><Context docBase="C:\github\lch\project\webStudy\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\Project" path="/Project" reloadable="true" source="org.eclipse.jst.jee.server:Project"/></Host>
+      
+      
+      <Context docBase="C:\github\lch\project\webStudy\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\github\lch\project\webStudy\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\Project" path="/Project" reloadable="true" source="org.eclipse.jst.jee.server:Project"/><Context docBase="C:\github\lch\project\webStudy\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\Webjsp" path="/Webjsp" reloadable="true" source="org.eclipse.jst.jee.server:Webjsp"/></Host>
     </Engine>
   </Service>
 </Server>

@@ -22,12 +22,13 @@ select * from member where id='1' and email='a';
 create table product(
 	i_product number primary key,
 	nm varchar(30),
-	price number default 0,
+	price number(10) default 0,
 	pic varchar(255),
 	qty number(4) default 0,
 	info varchar(255)
 );
 
+/*
 create table product_import(
 	i_pi number primary key,
 	i_product number,
@@ -39,7 +40,7 @@ create table product_import(
 insert into product values(1,'이름',10000,'이미지',0,'정보');
 insert into product values(2,'이름',10000,'bag.png',0,'정보');
 insert into product_import values();
-
+select * from product_import;
+*/
 select * from member;
 select * from product;
-select * from product_import;

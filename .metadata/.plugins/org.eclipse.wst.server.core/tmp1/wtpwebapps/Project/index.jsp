@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-	String view=(String)request.getAttribute("view");
+	String view=(String)request.getParameter("view");
 	
 	if(view == null){
 		view="main.jsp";
@@ -20,22 +20,38 @@
 	<div class="container">
 		<header>
 			<div class="event">
-				주도 행사 알림바
+				주도 행사 알림바(참고 쇼핑몰:바이슬림)
 			</div>
 			<div class="backend">
-				<a href="index.jsp">홈</a>
-				<a href="">즐겨찾기</a>
-				<a href="">바로가기</a>
-				<a href="login">로그인</a>
-				<a href="join">회원가입</a>
-				<a href="">마이쇼핑</a>
-				<a href="">장바구니</a>
-				<a href="">주문조회</a>
-				<a href="">고객센터 & 이벤트</a>
-				<form class="search" action="" method="get">
-					<input type="text" name="search">
-					<input type="submit" value="검색">
-				</form>
+				<ul>
+					<li><a href="index.jsp">홈</a></li>
+					<li><a href="">즐겨찾기</a></li>
+					<li><a href="">바로가기</a></li>
+					<li><a href="index.jsp?view=login.jsp">로그인</a></li>
+					<li><a href="index.jsp?view=join.jsp">회원가입</a></li>
+					<li>
+						<a href="">마이쇼핑</a>
+						<ul class="category-sub">
+							<li><a href="index.jsp?view=member_update.jsp">회원정보</a></li>
+							<li><a href="">주문내역</a></li>
+							<li><a href="">관심상품</a></li>
+							<li><a href="">배송 주소록</a></li>
+							<li><a href="">적립금</a></li>
+							<li><a href="">예치금</a></li>
+							<li><a href="">쿠폰</a></li>
+							<li><a href="">게시판 관리</a></li>
+						</ul>
+					</li>
+					<li><a href="">장바구니</a></li>
+					<li><a href="">주문조회</a></li>
+					<li><a href="">고객센터 & 이벤트</a></li>
+					<li>
+						<form class="search" action="" method="get">
+							<input type="text" name="search">
+							<input type="submit" value="검색">
+						</form>
+					</li>
+				</ul>
 			</div>
 			<div class="logo">
 				<img class="logo-img" src="./images/snoopy.jpg" alt="로고"/>
