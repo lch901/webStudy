@@ -1,5 +1,5 @@
 <%@ page import="com.test.util.Utility" %>
-	<!-- login menu ë“± ì‹œìž‘ -->
+	<!-- login menu µî ½ÃÀÛ -->
 	<TR>
 		<TD width="480">
 			<TABLE border="0" cellpadding="0" cellspacing="0">
@@ -11,10 +11,10 @@
 								<TD widht=56><a href="./index2.jsp"><img src="./img/menu_home.gif" border="0"></a></TD>
 								<TD widht=72><a href="#"><img src="./img/menu_notice.gif" border="0"></a></TD>
 							<% if(Utility.getSession(request, "u_id") == null)	{  %>
-								<TD widht=85 align=center><a href="./login.jsp"><img src="./img/menu_login.gif" border="0"></a><!-- login í›„ì— menu_logout.gif ë¡œ ë°”ë€œ --></TD>
-								<TD widht=85><a href="../member/member_list.jsp"><img src="./img/menu_join.gif" border="0"></a><!-- login í›„ì— menu_modify.gif ë¡œ ë°”ë€œ --></TD>
+								<TD widht=85 align=center><a href="./login.jsp"><img src="./img/menu_login.gif" border="0"></a><!-- login ÈÄ¿¡ menu_logout.gif ·Î ¹Ù²ñ --></TD>
+								<TD widht=85><a href="#"><img src="./img/menu_join.gif" border="0"></a><!-- login ÈÄ¿¡ menu_modify.gif ·Î ¹Ù²ñ --></TD>
 							<%  }else { %>
-								<TD widht=85><a href="./logout.jsp"><img src="./img/menu_logout.gif" border="0"></a><!-- login í›„ì— menu_modify.gif ë¡œ ë°”ë€œ --></TD>
+								<TD widht=85><a href="./logout.jsp"><img src="./img/menu_logout.gif" border="0"></a><!-- login ÈÄ¿¡ menu_modify.gif ·Î ¹Ù²ñ --></TD>
 								<TD widht=85><a href="#"><img src="./img/menu_modify.gif" border="0"></a></TD>
 							<% } %>	
 								<TD widht=70><a href="#"><img src="./img/menu_sitemap.gif" border="0"></a></TD>
@@ -27,7 +27,7 @@
 			</TABLE>
 		</TD>
 	</TR>
-	<!-- login menu ë“± ë -->
+	<!-- login menu µî ³¡ -->
 
 
 

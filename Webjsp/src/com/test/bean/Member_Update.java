@@ -31,20 +31,6 @@ public class Member_Update {
 		PreparedStatement  pstmt 	= null;
 		ResultSet  rs				= null;
 		String sql 					= "";
-		
-//		System.out.println("앍"+data.getNum());
-//		System.out.println(data.getId());
-//		System.out.println(data.getPwd());
-//		System.out.println(data.getName(han_yn));
-//		System.out.println(data.getEmail());
-//		System.out.println(data.getTel());
-//		System.out.println(data.getPost());
-//		System.out.println(data.getAddr_1(han_yn));
-//		System.out.println(data.getAddr_2(han_yn));
-//		System.out.println(data.getComment1(han_yn));
-//		System.out.println(data.getAccess1());
-//		System.out.println(data.getReg_date());
-//		System.out.println(data.getState());
 	
 		try{
 			con = mgr.getConnection("oracle");

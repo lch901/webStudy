@@ -150,7 +150,7 @@ public class Board_Entity {
 	//클라이언트 요청을 받아서 객체에 세팅하는 메소드(파일 업로드 용도)
 	public void setParser(HttpServletRequest request ) throws Exception {
 		try{
-			String file_path  = request.getRealPath("/") + "attach_file/" ;//"d:\\home\\Ch09\\freeboard\\attach_file\\";
+			String file_path  = request.getRealPath("/") + "freeboard/board/attach_file/" ;//"d:\\home\\Ch09\\freeboard\\attach_file\\";
 	 		MultipartRequest up = new MultipartRequest(request, file_path , 10*1024*1024 ,"euc-kr", new DefaultFileRenamePolicy());//new DefaultFileRenamePolicy());
  			
 //	 		System.out.println(up.getParameter("reg_name"));

@@ -1,8 +1,8 @@
 <%@ page import="com.test.util.Utility" %>
 <%
-	String u_num 	= Utility.getSession(request, "u_num");//ì¼ë ¨ë²ˆí˜¸
-	String u_id 	= Utility.getSession(request, "u_id");	//ì•„ì´ë””
- 	String u_name 	= Utility.getSession(request, "u_name");//ì„±ëª…
- 	String u_email	= Utility.getSession(request, "u_email");//ì´ë©”ì¼
- 	String u_allow	= Utility.getSession(request, "u_allow");//ê¶Œí•œ(íšŒì›êµ¬ë¶„ ì¼ë°˜-M, íŠ¹ë³„ - S)
+	String u_num 	= Utility.getSession(request, "u_num");//ÀÏ·Ã¹øÈ£
+	String u_id 	= Utility.getSession(request, "u_id");	//¾ÆÀÌµð
+ 	String u_name 	= Utility.getSession(request, "u_name");//¼º¸í
+ 	String u_email	= Utility.getSession(request, "u_email");//ÀÌ¸ÞÀÏ
+ 	String u_allow	= Utility.getSession(request, "u_allow");//±ÇÇÑ(È¸¿ø±¸ºÐ ÀÏ¹Ý-M, Æ¯º° - S)
 %>

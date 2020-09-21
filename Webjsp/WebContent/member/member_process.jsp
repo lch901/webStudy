@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=utf-8" %> 
+<%@ page contentType="text/html; charset=euc-kr" %> 
 <%@ page import="java.util.*" %>
 
 <jsp:useBean id="b_data" scope="page" class="com.test.bean.Member_Entity"/>
@@ -19,7 +19,7 @@
 
 <html>
 <title></title>
-	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-type" content="text/html; charset=euc-kr">
 	<link href="../ssem.css" rel="stylesheet" type="text/css">
 </head> 
 <body bgcolor=#D4D0C8>
@@ -29,14 +29,14 @@
 	if(data_yn){
 %>
 		<script>
-			alert("요청하신 작업을 완료하였습니다.");
+			alert("��û�Ͻ� �۾��� �Ϸ��Ͽ����ϴ�.");
 		</script>
 <%
 	}
 	else{
 %>			
 	<script>
-		alert("요청하신 작업을 실패하였습니다.");
+		alert("��û�Ͻ� �۾��� �����Ͽ����ϴ�.");
 	</script>
 
 <%

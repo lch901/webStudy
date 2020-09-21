@@ -26,7 +26,7 @@ int cnt = list.size(); //회원 인원수를 얻는다.
 <HEAD>
 <TITLE></TITLE>
 <link rel="stylesheet" href="../ssem.css" type="text/css">
-<script language="JavaScript" src="./js/member_write.js" charset="utf-8"></script>
+<script language="JavaScript" src="./js/member_write.js" ></script>
 </HEAD>
 
 <BODY bgcolor="#ffffff" topmargin="0" marginheight="0" leftmargin="0" marginwidth="0" width="776" height=500>
@@ -133,9 +133,8 @@ int cnt = list.size(); //회원 인원수를 얻는다.
 										
 											<TD width=20 height=30>
 											<input type="checkbox" name="no_all"  value="1" 
-								<%  if(cnt> 1) { out.println(" onClick='javascript:selectall(); '"); }
-								%>			
-											 />
+								<%  if(cnt >= 1) { out.println(" onClick='javascript:selectall();'"); }
+								%>			/>
 											</TD>
 											<TD align=center  width=50 font class=board>No.</TD>
 											<TD width=50 font class=board>성명</TD>

@@ -18,7 +18,6 @@ CREATE TABLE MEMBER1_TBL (
 	STATE		char(1)		NOT NULL,	--'Y':정상 'N' : 탈퇴
 	CONSTRAINTS MEMBER1_TBL_PK PRIMARY KEY(NUM)
 );
-select * from member1_tbl;
 
 ----------------------------------------------------
 
