@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=euc-kr" %>
+<%@ page contentType="text/html; charset=utf-8" %>
 
 <%  java.text.SimpleDateFormat formatter = new java.text.SimpleDateFormat("yyyyMMdd");
 	String today	= formatter.format(new java.util.Date());
@@ -7,7 +7,7 @@
 <HEAD>
 <TITLE></TITLE>
 <link rel="stylesheet" href="../ssem.css" type="text/css">
-<script language="JavaScript" src="./js/member_write.js" ></script>
+<script language="JavaScript" src="./js/member_write.js" charset="utf-8"></script>
 </HEAD>
 
 <BODY bgcolor="#ffffff" topmargin="0" marginheight="0" leftmargin="0" marginwidth="0" width="776" height=500>
@@ -17,11 +17,11 @@
 	<TR>
 
 		<form  name="frm1"  action=""  method="POST" >
-		<input type='hidden' name='cmd' value='insert'> <!-- ÀÛ¾÷±¸ºĞ -->
+		<input type='hidden' name='cmd' value='insert'> <!-- ì‘ì—…êµ¬ë¶„ -->
 		<input type='hidden' name='reg_date' value='<%=today%>'> 
 				
 		<TD width=25><img src="./images/blank.gif" width="25" height="1" alt="" border="0"></TD>
-		<!-- body ½ÃÀÛ -->
+		<!-- body ì‹œì‘ -->
 		<TD width=549 valign=top>
 			<TABLE border="0" cellpadding="0" cellspacing="0">
 				<TR>
@@ -30,7 +30,7 @@
 							<TR><TD><img src="./images/blank.gif" width="1" height="15" alt="" border="0"></TD></TR>
 							<TR>
 								<TD colspan=2 background="./images/page_title_bg.gif" width=529 height=44>
-									<font size=3 color="#FFFFFF"><b>&nbsp;È¸¿ø °ü¸®(µî·Ï)</b></font>
+									<font size=3 color="#FFFFFF"><b>&nbsp;íšŒì› ê´€ë¦¬(ë“±ë¡)</b></font>
 								</TD>
 							</TR>
 							<TR><TD colspan=2><img src="./images/blank.gif" width="1" height="25" alt="" border="0"></TD></TR>
@@ -38,7 +38,7 @@
 							<TR><TD colspan=2><img src="./images/blank.gif" width="1" height="10" alt="" border="0"></TD></TR>
 							
 							<TR>
-								<TD width=129 height=25 bgcolor="#369BD0"><font color="#ffffff">&nbsp;&nbsp;* È¸¿ø¸í</font></TD>
+								<TD width=129 height=25 bgcolor="#369BD0"><font color="#ffffff">&nbsp;&nbsp;* íšŒì›ëª…</font></TD>
 								<TD width=400 font class=board>&nbsp;&nbsp;<input type=text name="name" class="form" style="width:130;height:18px;"></TD>
 							</TR>
 							<TR><TD colspan=2 background="./images/board_linebg.gif"><img src="./images/blank.gif" width="1" height="1" alt="" border="0"></TD></TR>
@@ -50,7 +50,7 @@
 							</tr>
 							<TR><TD colspan=2 background="./images/board_linebg.gif"><img src="./images/blank.gif" width="1" height="1" alt="" border="0"></TD></TR>
 							<tr>
-								<td height=25  bgcolor="#369BD0"><font color="#ffffff">&nbsp;&nbsp;* ºñ¹Ğ¹øÈ£ </font></td>
+								<td height=25  bgcolor="#369BD0"><font color="#ffffff">&nbsp;&nbsp;* ë¹„ë°€ë²ˆí˜¸ </font></td>
 								<td>&nbsp;&nbsp;<input type=password name="pwd" class="form" style="width:130;height:18px;"></td>
 							</tr>
 							<TR><TD colspan=2 background="./images/board_linebg.gif"><img src="./images/blank.gif" width="1" height="1" alt="" border="0"></TD></TR>
@@ -61,47 +61,47 @@
 							</tr>
 							<TR><TD colspan=2 background="./images/board_linebg.gif"><img src="./images/blank.gif" width="1" height="1" alt="" border="0"></TD></TR>
 							<tr>
-								<td height=25  bgcolor="#369BD0"><font color="#ffffff">&nbsp;&nbsp;* ÇÚµåÆù</font> </td>
+								<td height=25  bgcolor="#369BD0"><font color="#ffffff">&nbsp;&nbsp;* í•¸ë“œí°</font> </td>
 								<td>&nbsp;&nbsp;<input type=text name="tel" class="form" style="width:100;height:18px;">
-								&nbsp; ¡Ø '-'À» Æ÷ÇÔÇÏ¿© ÀÔ·ÂÇÏ¼¼¿ä. ¿¹) 011-222-2222</td>
+								&nbsp; â€» '-'ì„ í¬í•¨í•˜ì—¬ ì…ë ¥í•˜ì„¸ìš”. ì˜ˆ) 011-222-2222</td>
 							</tr>
 							<TR><TD colspan=2 background="./images/board_linebg.gif"><img src="./images/blank.gif" width="1" height="1" alt="" border="0"></TD></TR>
 							<tr>
-								<td height=25 bgcolor="#369BD0"><font color="#ffffff">&nbsp;&nbsp;¿ìÆí¹øÈ£</font></td>
+								<td height=25 bgcolor="#369BD0"><font color="#ffffff">&nbsp;&nbsp;ìš°í¸ë²ˆí˜¸</font></td>
 								<td>&nbsp;&nbsp;<input type=text name="post"  class="form" style="width:70;height:18px;"><!--readOnly=true-->
 									&nbsp;&nbsp;<a href="javascript:post_search()"><img src="./images/button_post_check.gif" width="102" height="21" alt="" border="0" align="absmiddle" ></a>
 								</td>
 							</tr>
 							<TR><TD colspan=2 background="./images/board_linebg.gif"><img src="./images/blank.gif" width="1" height="1" alt="" border="0"></TD></TR>
 							<tr>
-								<td height=25 bgcolor="#369BD0"><font color="#ffffff">&nbsp;&nbsp;*ÁÖ&nbsp;&nbsp;¼Ò</font></td>
+								<td height=25 bgcolor="#369BD0"><font color="#ffffff">&nbsp;&nbsp;*ì£¼&nbsp;&nbsp;ì†Œ</font></td>
 								<td>&nbsp;&nbsp;<input type=text name="addr_1"  class="form" style="width:350;height:18px;"></td>
 							</tr>
 							<TR><TD colspan=2 background="./images/board_linebg.gif"><img src="./images/blank.gif" width="1" height="1" alt="" border="0"></TD></TR>
 							<tr>
-								<td height=25 bgcolor="#369BD0"><font color="#ffffff">&nbsp;&nbsp;*»ó¼¼ ÁÖ¼Ò</font></td>	
+								<td height=25 bgcolor="#369BD0"><font color="#ffffff">&nbsp;&nbsp;*ìƒì„¸ ì£¼ì†Œ</font></td>	
 								<td>&nbsp;&nbsp;<input type=text name="addr_2" class="form" style="width:350;height:18px;"></td>
 							</tr>	
 							<TR><TD colspan=2 background="./images/board_linebg.gif"><img src="./images/blank.gif" width="1" height="1" alt="" border="0"></TD></TR>
 							<TR>
-								<TD height=50 bgcolor="#369BD0"><font color="#ffffff">&nbsp;&nbsp;* ÇÏ°í½ÍÀº ¸»</font> </TD>
+								<TD height=50 bgcolor="#369BD0"><font color="#ffffff">&nbsp;&nbsp;* í•˜ê³ ì‹¶ì€ ë§</font> </TD>
 								<TD font class=board>&nbsp;&nbsp;<textarea name="comment1" class="form" style="width:400;height:50px;"></textarea></TD>
 							</TR>
 							<TR><TD colspan=2 background="./images/board_linebg.gif"><img src="./images/blank.gif" width="1" height="1" alt="" border="0"></TD></TR>
 							<tr>
-								<td height=25 bgcolor="#369BD0"><font color="#ffffff">&nbsp;&nbsp;* Á¢±Ù±ÇÇÑ</font> </td>
+								<td height=25 bgcolor="#369BD0"><font color="#ffffff">&nbsp;&nbsp;* ì ‘ê·¼ê¶Œí•œ</font> </td>
 								<td>
-									&nbsp;&nbsp;<input type="radio" name="access1"  value="M" checked>ÀÏ¹İÈ¸¿ø
-									&nbsp;&nbsp;<input type="radio" name="access1"  value="S" >Æ¯º°È¸¿ø
+									&nbsp;&nbsp;<input type="radio" name="access1"  value="M" checked>ì¼ë°˜íšŒì›
+									&nbsp;&nbsp;<input type="radio" name="access1"  value="S" >íŠ¹ë³„íšŒì›
 								</td>
 							</tr>
 							<TR><TD colspan=2 bgcolor="#8E8E8E"><img src="./images/blank.gif" width="1" height="2" alt="" border="0"></TD></TR>
 							<TR><TD colspan=2><img src="./images/blank.gif" width="1" height="10" alt="" border="0"></TD></TR>
 							<TR>
 							    <TD colspan=9 bgcolor="#369BD0" height=25 font class=boardtext align=right>
-							      <a href="member_list.jsp">[¸ñ·Ïº¸±â]</a>
-							      <a href="javascript:send()">[µî·Ï]</a>
-							      <a href="javascript:history.back()">[Ãë¼Ò]</a>
+							      <a href="member_list.jsp">[ëª©ë¡ë³´ê¸°]</a>
+							      <a href="javascript:send()">[ë“±ë¡]</a>
+							      <a href="javascript:history.back()">[ì·¨ì†Œ]</a>
 							    </TD>
 						 	</TR>
 						</TABLE>
@@ -111,7 +111,7 @@
 				</form>
 			</TABLE>
 		</TD>
-		<!-- body ³¡ -->
+		<!-- body ë -->
 	</TR>
 </TABLE>
 </center>
