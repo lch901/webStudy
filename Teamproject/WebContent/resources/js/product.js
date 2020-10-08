@@ -12,18 +12,6 @@ function p_order(){
 		return ;
 	}
 	
-	if(confirm("구매하시")){
-		
-	}
-	
-	function product_delete(){
-		if(confirm("정말 삭제하시겠습니까?")){
-			return true;
-		}else{
-			return false;
-		}
-	}
-	
 	f.action='product_order';
 	f.submit();
 }

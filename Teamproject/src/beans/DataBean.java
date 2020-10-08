@@ -27,8 +27,22 @@ public class DataBean {
 	private String i_date;
 	//-------------product_import테이블----------------
 	private int i_po;
+	private String firstDate;
+	private String lastDate;
 	
 	
+	public String getFirstDate() {
+		return firstDate;
+	}
+	public void setFirstDate(String firstDate) {
+		this.firstDate = firstDate;
+	}
+	public String getLastDate() {
+		return lastDate;
+	}
+	public void setLastDate(String lastDate) {
+		this.lastDate = lastDate;
+	}
 	public int getI_po() {
 		return i_po;
 	}

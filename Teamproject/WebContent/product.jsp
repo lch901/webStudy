@@ -9,7 +9,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="https://kit.fontawesome.com/b2b9fa9cfa.js" crossorigin="anonymous?ver=123"></script> 
-<link rel="stylesheet" type="text/css" href="css/style.css?ver=123">
+<link rel="stylesheet" type="text/css" href="css/main.css?ver=123">
 <link rel="stylesheet" type="text/css" href="css/nm.css">
 <script src="js/product.js" charset="utf-8"></script>
 
@@ -110,8 +110,8 @@
 				</table>
 				<!-- 숨김 -->
 				<input type="hidden" name="i_product" value="${list.get(0).getI_product()}">
-				<a href="javascript:p_order()" style="display: inline-block; width: 218px; height: 45px; text-align: center; line-height: 42px; font-size: 18px; border-radius: 2px; background: #0a56a9; color: #fff; margin-top: 150px;">구매하기</a>
-				<a href="javascript:p_cart()" style="display: inline-block; width: 218px; height: 45px; text-align: center; line-height: 42px; font-size: 18px; border-radius: 2px; background: #666; color: #fff; margin-top: 150px;">장바구니</a>
+				<a href="javascript:p_order()" style="display: inline-block; width: 218px; height: 45px; text-align: center; line-height: 42px; font-size: 18px; border-radius: 2px; background: #0a56a9; color: #fff; margin-top: 100px;">구매하기</a>
+				<a href="javascript:p_cart()" style="display: inline-block; width: 218px; height: 45px; text-align: center; line-height: 42px; font-size: 18px; border-radius: 2px; background: #666; color: #fff; margin-top: 100px;">장바구니</a>
 				<!-- <input type="submit" value="구매하기" onclick="javascript: form.action='order';">
 				<input type="submit" value="장바구니" onclick="javascript: form.action='cart';"> -->
 			</form>	

@@ -1,0 +1,10 @@
+option.properties 파일첨부 경로
+
+// C:/GitHub/choimysil/spring/.metadata/.plugins/org.eclipse.wst.server.core/tmp2/wtpwebapps/webProjectJava10_6/resources/upload
+
+
+스프링이란
+https://tjsdudkim.tistory.com/75?category=768042
+
+
+파일첨부 한후-이클립스에서 Project Explorer를 새로고침해야 이미지가 웹에 뜸

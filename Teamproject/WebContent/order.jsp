@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="https://kit.fontawesome.com/b2b9fa9cfa.js" crossorigin="anonymous?ver=123"></script> 
-<link rel="stylesheet" type="text/css" href="css/style.css?ver=111">
+<link rel="stylesheet" type="text/css" href="css/main.css?ver=111">
 <style>
 	.title{
 		padding-top:120px;
@@ -38,11 +38,13 @@
 		if(dataBean==null){
 			response.sendRedirect("login");
 		}
-		List<DataBean> list=(List<DataBean>)request.getAttribute("list");
+			List<DataBean> list=(List<DataBean>)request.getAttribute("list");
 	%>
-	<div class="title">주문 상품 정보</div>
-	<input type="date" name="fristDate">&nbsp;&nbsp;~&nbsp;&nbsp;<input type="date" name="lastDate">
-	&nbsp;&nbsp;<input type="submit" value="조회">
+	<div class="title">주문 내역</div>
+	<form action="order" method="get">
+		<input type="date" name="firstDate">&nbsp;&nbsp;~&nbsp;&nbsp;<input type="date" name="lastDate">
+		&nbsp;&nbsp;<input type="submit" value="조회">
+	</form>
 	<table class="table1" border="1" style="border-collapse: collapse;">
 		<tr>
 			<td>주문일자</td>
@@ -50,35 +52,41 @@
 			<td>상품정보</td>
 			<td>가격</td>
 			<td>개수</td>
-			<td>합계</td>
+			<td>상품구매금액</td>
+			<td>주문처리상태</td>
 		</tr>
 		<%
-			int sum=0; 
-			int total=0;
+			int sum=0; //(가격*개수)합계
+			int total=0;//총 합계
+			int i=0;//for문 i
 		%>
 		<%if(list!=null){%>
-			<%for(int i=0;i<list.size();i++){ %>
-				<tr>
-					<td><%=list.get(i).getI_date().substring(0,10)%></td>
-					<td><img class="img1" src="images/<%=list.get(i).getPic()%>"></td>
-					<td>
-						<%=list.get(i).getName() %>
-						<%=list.get(i).getColorSize() %>
-					</td>
-					<td><%=list.get(i).getPrice() %>원</td>
-					<td><%=list.get(i).getQty() %></td>
-					<td>
-						<% sum=list.get(i).getQty()*list.get(i).getPrice();
-						   out.print(sum);
-						   total+=sum;%>
-					</td>
-				</tr>
+			<%for(i=0;i<list.size();i++){ %>
+				<%if(dataBean.getI_member()==list.get(i).getI_member()){ %>
+					<tr>
+						<td><%=list.get(i).getI_date().substring(0,10)%></td>
+						<td><img class="img1" src="images/<%=list.get(i).getPic()%>"></td>
+						<td>
+							<%=list.get(i).getName() %>
+							<%=list.get(i).getColorSize() %>
+						</td>
+						<td><%=list.get(i).getPrice() %>원</td>
+						<td><%=list.get(i).getQty() %></td>
+						<td>
+							<% sum=list.get(i).getQty()*list.get(i).getPrice();
+							   out.print(sum);
+							   total+=sum;%>
+						</td>
+						<td>배송중</td>
+					</tr>
+				<%} %>
 			<%} %>
 		<%} %>
 		<tr>
-			<td colspan="6"><span>기본배송</span> <span><%out.print("상품구매금액: "+total+"+ 배송비: 0 =합계: "+total);%>원</span></td>
+			<td colspan="7"><span>기본배송</span> <span><%out.print("상품구매금액: "+total+"+ 배송비: 3000 =합계: "+(total+3000*i));%>원</span></td>
 		</tr>
 	</table>
+		
 	<jsp:include page="bottom.jsp"/>
 </body>
 </html>

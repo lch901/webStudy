@@ -2,6 +2,8 @@ package controller;
 
 
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -12,6 +14,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -166,11 +169,38 @@ public class TMController {
 	}
 	//---------------장바구니-주문하기
 	@GetMapping("cart_order")
-	public void cart_order(DataBean dataBean,HttpServletResponse response) throws Exception{
-		sqltemp.delete("test_db.delete_product_import_cart_order",dataBean);
-		response.sendRedirect("cart");
+	public void cart_order(HttpServletRequest request,HttpServletResponse response) throws Exception{
+		String i_pi=request.getParameter("i_pi");
+		String i_product=request.getParameter("i_product");
+		String colorSize=request.getParameter("colorSize");
+		String qty=request.getParameter("qty");
+		System.out.println(i_pi);
+		System.out.println(i_product);
+		System.out.println(colorSize);
+		System.out.println(qty);
+		
+		HttpSession session=request.getSession();
+		DataBean m_dataBean = (DataBean)session.getAttribute("session");//로그인에서 넘어온 member값
+		
+		List<DataBean> list=sqltemp.selectList("test_db.select_i_product",Integer.parseInt(i_product));
+		DataBean dataBean = new DataBean();
+		dataBean.setI_po(sqltemp.selectOne("test_db.select_product_order_num"));
+		dataBean.setI_member(m_dataBean.getI_member());
+		dataBean.setI_pi(Integer.parseInt(i_pi));
+		dataBean.setColorSize(colorSize);
+		dataBean.setQty(Integer.parseInt(qty));
+		dataBean.setName(list.get(0).getName());
+		dataBean.setPic(list.get(0).getPic());
+		dataBean.setPrice(list.get(0).getPrice());
+		
+	
+		sqltemp.insert("test_db.insert_product_order",dataBean);
+		sqltemp.delete("test_db.delete_product_import_cart_one",dataBean);
+		
+		response.sendRedirect("order");
 	}
-	//---------------장바구니-주문하기,상품삭제
+	
+	//---------------장바구니-상품삭제
 	@GetMapping("cart_delete")
 	public void cart_delete(HttpServletRequest request,HttpServletResponse response) throws Exception{
 		String i_pi=request.getParameter("i_pi");
@@ -179,7 +209,43 @@ public class TMController {
 		response.sendRedirect("cart");//servlet-context.xml의 경로 설정때문에 response사용
 	}
 	//---------------장바구니-전체 주문하기
-	//@GetMapping("")
+	@GetMapping("cart_total_order")
+	public void cart_total_order(HttpServletRequest request,HttpServletResponse response,Model model) throws Exception{
+		List<DataBean> list=(List<DataBean>)model.getAttribute("list");
+		for(int i=0;i<list.size();i++) {
+			System.out.println(list.get(0).getI_pi());
+		}
+		
+		
+//		String i_pi=request.getParameter("i_pi");
+//		String i_product=request.getParameter("i_product");
+//		String colorSize=request.getParameter("colorSize");
+//		String qty=request.getParameter("qty");
+//		System.out.println(i_pi);
+//		System.out.println(i_product);
+//		System.out.println(colorSize);
+//		System.out.println(qty);
+//		
+//		HttpSession session=request.getSession();
+//		DataBean m_dataBean = (DataBean)session.getAttribute("session");//로그인에서 넘어온 member값
+//		
+//		List<DataBean> list=sqltemp.selectList("test_db.select_i_product",Integer.parseInt(i_product));
+//		DataBean dataBean = new DataBean();
+//		dataBean.setI_po(sqltemp.selectOne("test_db.select_product_order_num"));
+//		dataBean.setI_member(m_dataBean.getI_member());
+//		dataBean.setI_pi(Integer.parseInt(i_pi));
+//		dataBean.setColorSize(colorSize);
+//		dataBean.setQty(Integer.parseInt(qty));
+//		dataBean.setName(list.get(0).getName());
+//		dataBean.setPic(list.get(0).getPic());
+//		dataBean.setPrice(list.get(0).getPrice());
+//		
+//	
+//		sqltemp.insert("test_db.insert_product_order",dataBean);
+//		sqltemp.delete("test_db.delete_product_import_cart_one",dataBean);
+//		
+		response.sendRedirect("order");
+	}
 	
 	//---------------장바구니-전체 주문하기,장바구니 비우기
 	@GetMapping("cart_total_delete")
@@ -193,9 +259,34 @@ public class TMController {
 	}
 	//------------------주문내역------------------------
 	@GetMapping("order")
-	public String order(HttpServletRequest request,Model model) {
-		List<DataBean> list=sqltemp.selectList("test_db.select_product_order");
-		model.addAttribute("list",list);
+	public String order(HttpServletRequest request,Model model) throws Exception{
+		String firstDate=request.getParameter("firstDate");
+		String lastDate=request.getParameter("lastDate");
+		if(firstDate==null) {
+			SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+			SimpleDateFormat sdf2=new SimpleDateFormat("yyyy-MM-dd");
+			Date date=new Date();
+			Date date2=new Date();
+			String fd=sdf.format(date);
+			int i_fd=Integer.parseInt(fd.substring(0,4));
+			i_fd--;
+			String ld=sdf.format(date2);
+			int i_ld=Integer.parseInt(ld.substring(0,4));
+			i_ld++;
+			
+			firstDate=Integer.toString(i_fd)+fd.substring(4,10);
+			lastDate=Integer.toString(i_ld)+fd.substring(4,10);
+		}
+//		System.out.println(firstDate+"firstDate");
+//		System.out.println(lastDate);
+		
+		DataBean dataBean=new DataBean();
+		dataBean.setFirstDate(firstDate);
+		dataBean.setLastDate(lastDate);
+	
+		List<DataBean> list	=sqltemp.selectList("test_db.select_product_order",dataBean);
+		model.addAttribute("list", list);
+		
 		return "order";
 	}
 	

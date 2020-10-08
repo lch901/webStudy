@@ -7,7 +7,6 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="https://kit.fontawesome.com/b2b9fa9cfa.js" crossorigin="anonymous?ver=123"></script> 
-<link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet" href="css/main.css">
 <script src="js/main.js" defer></script>
 </head>
@@ -19,7 +18,6 @@
 			%><script>alert('<%=msg%>')</script><%
 		}
 		DataBean dataBean = (DataBean)session.getAttribute("session");
-		
 	%>
 	<!--최상단 메뉴바-->
     <jsp:include page="top.jsp"/>
@@ -150,8 +148,8 @@
             <a href="#">
                 <img src="images/carra.jpg" alt="">
                 <div class="project_description">
-                    <h3>타코야킴의 2020 가을 신상품 </h3>
-                    <p>다양한 코디와 신상품을 만나보세요</p>
+                    <h3><span>타코야킴의 2020 가을 신상품</span> </h3>
+                    <p><span>다양한 코디와 신상품을 만나보세요</span></p>
                 </div>
             </a>  
         </div>

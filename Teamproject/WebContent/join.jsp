@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원가입</title>
     <script src="https://kit.fontawesome.com/b2b9fa9cfa.js" crossorigin="anonymous?ver=123"></script> 
-	<link rel="stylesheet" type="text/css" href="css/style.css?ver=111">
+	<link rel="stylesheet" type="text/css" href="css/main.css?ver=111">
     
     <link href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/join.css">

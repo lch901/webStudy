@@ -69,7 +69,7 @@ commit;
 rollback;
 
 select nvl(max(i_pi),0)+1 from product_import;--      [nvl(count(*),0)+1     ->    상품이 중간에 삭제되면 작동이 안됨. ]
-select b.i_pi,a.name,b.colorsize,a.pic,a.info,a.price,b.qty,b.i_member,a.category from product a inner join product_import b on b.i_product = a.i_product order by b.i_pi;
+select b.i_pi,a.name,b.colorsize,a.pic,a.info,a.price,b.qty,b.i_member,a.i_product,a.category from product a inner join product_import b on b.i_product = a.i_product order by b.i_pi;
 select count(*) from product_import where i_member=2;
 
 
@@ -86,7 +86,12 @@ create table product_order(
 );
 insert into product_order(i_po,i_member,pic,name,colorSize,price,qty)values(1,1,'best/best1.jpg','옷','네이비-95',12000,2);
 insert into product_order(i_po,i_member,pic,name,colorSize,price,qty)values(2,1,'best/best2.jpg','옷a','네이비-95aa',10000,3);
+
+insert into product_order(i_po,i_member,pic,name,colorSize,price,qty,i_date)values((select nvl(max(i_po),0)+1 from product_order),1,'best/best2.jpg','옷a','네이비-95aa',10000,3,'2017/4/05');
+insert into product_order(i_po,i_member,pic,name,colorSize,price,qty,i_date)values((select nvl(max(i_po),0)+1 from product_order),2,'best/best2.jpg','옷aa','깜장-95aa',10000,3,'2019/5/05');
+select * from product_order where i_date between to_date('2019-01-01') and to_date('2020-10-10') order by i_date desc;
 delete from product_order;
+delete from product_order where i_po=1;
 
 select nvl(max(i_po),0)+1 from product_order;
 commit;
