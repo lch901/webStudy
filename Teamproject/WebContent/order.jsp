@@ -82,9 +82,6 @@
 				<%} %>
 			<%} %>
 		<%} %>
-		<tr>
-			<td colspan="7"><span>기본배송</span> <span><%out.print("상품구매금액: "+total+"+ 배송비: 3000 =합계: "+(total+3000*i));%>원</span></td>
-		</tr>
 	</table>
 		
 	<jsp:include page="bottom.jsp"/>
