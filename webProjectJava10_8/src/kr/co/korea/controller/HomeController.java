@@ -18,6 +18,6 @@ public class HomeController {
 	public String home(HttpServletRequest request) {
 //		System.out.println(loginUserBean);
 		System.out.println(request.getServletContext().getRealPath("/"));  //실제경로확인
-		return "redirect:main";
+		return "redirect:main";// 서블릿main으로 넘김.
 	}
 }

@@ -21,7 +21,8 @@ insert into board_info_table(board_info_idx, board_info_name) values (1, '1자�
 insert into board_info_table(board_info_idx, board_info_name) values (2, '2게시판');
 insert into board_info_table(board_info_idx, board_info_name) values (3, '3게시판');
 insert into board_info_table(board_info_idx, board_info_name) values (4, '4게시판');
-
+insert into board_info_table(board_info_idx, board_info_name) values (5, '55게시판');
+insert into board_info_table(board_info_idx, board_info_name) values (6, '6게시판');
 commit;
 
 create table user_table(
@@ -51,4 +52,8 @@ select a1.content_idx, a1.content_subject, a2.user_name as content_writer_name,
    to_char(a1.content_date, 'YYYY-MM-DD') as content_date
    from content_table a1, user_table a2 
    where a1.content_writer_idx = a2.user_idx  and a1.content_board_idx = 1 
-   order by a1.content_idx desc;
+   order by a1.content_idx desc;-- 조인안써도 테이블 2개 불러올수있음..
+   
+   
+   select * from board_info_table order by board_info_idx;
+ 

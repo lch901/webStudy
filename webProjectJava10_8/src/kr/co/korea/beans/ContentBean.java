@@ -7,6 +7,7 @@ import org.springframework.web.multipart.MultipartFile;
 public class ContentBean {
 	private int content_idx;
 	
+	//유효성검사(validation)
 	@NotBlank
 	private String content_subject;
 	
