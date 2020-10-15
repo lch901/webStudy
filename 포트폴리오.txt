@@ -1,0 +1,14 @@
+1.디자인-라이브러리 이용
+(bootstrap, jquery)
+
+w3school.com등 사이트에서 이용.
+
+2.깃허브로 언제든 볼수있게만들기
+
+https://velog.io/@chris/10-web-developer-portfolio-tips
+
+
+
+
+
+자기소개(게시판하나라도 재대로 만들기,애매한 팀 프로젝트 작품 수정)
